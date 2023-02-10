@@ -1008,11 +1008,17 @@ void CRSF::sendRCFrameToFC()
     PackedRCdataOut.ch1 = ChannelData[1];
     PackedRCdataOut.ch2 = ChannelData[2];
     PackedRCdataOut.ch3 = ChannelData[3];
-    PackedRCdataOut.ch4 = ChannelData[4];
+
+    // Output channel 9 onto channel 5 for use in helicopters
+    PackedRCdataOut.ch4 = ChannelData[8];
+
     PackedRCdataOut.ch5 = ChannelData[5];
     PackedRCdataOut.ch6 = ChannelData[6];
     PackedRCdataOut.ch7 = ChannelData[7];
-    PackedRCdataOut.ch8 = ChannelData[8];
+
+    // Output arm flag state onto channel 9 in case it is needed
+    PackedRCdataOut.ch8 = ChannelData[4];
+
     PackedRCdataOut.ch9 = ChannelData[9];
     PackedRCdataOut.ch10 = ChannelData[10];
     PackedRCdataOut.ch11 = ChannelData[11];
